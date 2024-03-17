@@ -3,11 +3,19 @@
 
 
 
+import SinglePortofolio from '../SinglePortofolio'
 import './portfolio.css'
 
 
 function Portfolio(){
-
+const  portfolioArray = [
+  {name: 'Web Design'},  
+  {name: 'Web Developing'},
+  {name: 'Backend Developing'},
+  {name: 'Web Application'},
+  {name: 'ERP Design'},
+  {name: 'Front end'},
+]
     return(
 
 <>
@@ -27,40 +35,11 @@ function Portfolio(){
     </div>
     <div className="container overflow-hidden">
       <div className="row justify-content-xl-center gy-3 gy-sm-4">
-        <div className="col-12 col-sm-6 col-xl-5">
-          <div className="bg-white rounded shadow-sm p-3 p-md-4 p-xxl-5">
-            <h3 className="fw-bold mb-2">Web Design</h3>
-            <p className="text-secondary fst-italic mb-4">
-              Nullam felis turpis, commodo id fermentum eget, semper vel odio.
-            </p>
-          </div>
-        </div>
-        <div className="col-12 col-sm-6 col-xl-5">
-          <div className="bg-white rounded shadow-sm p-3 p-md-4 p-xxl-5">
-            <h3 className="fw-bold mb-2">Problem solving</h3>
-            <p className="text-secondary fst-italic mb-4">
-              Nullam felis turpis, commodo id fermentum eget, semper vel odio.
-            </p>
-        
-          </div>
-        </div>
-        <div className="col-12 col-sm-6 col-xl-5">
-          <div className="bg-white rounded shadow-sm p-3 p-md-4 p-xxl-5">
-            <h3 className="fw-bold mb-2">Backend Developer</h3>
-            <p className="text-secondary fst-italic mb-4">
-              Nullam felis turpis, commodo id fermentum eget, semper vel odio.
-            </p>
-          </div>
-        </div>
-        <div className="col-12 col-sm-6 col-xl-5">
-          <div className="bg-white rounded shadow-sm p-3 p-md-4 p-xxl-5">
-            <h3 className="fw-bold mb-2">WordPress</h3>
-            <p className="text-secondary fst-italic mb-4">
-              Nullam felis turpis, commodo id fermentum eget, semper vel odio.
-            </p>
-          </div>
-        </div>
+          {
+          portfolioArray.map((portfolio,index)=> { return  <SinglePortofolio portfolio={portfolio} index={index}/>})
+        }
       </div>
+
     </div>
   </section>
 </>
@@ -68,7 +47,5 @@ function Portfolio(){
         
     )
 }
-
-
 
 export default Portfolio
